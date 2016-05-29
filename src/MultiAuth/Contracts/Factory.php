@@ -1,6 +1,6 @@
 <?php
 
-namespace App\MultiAuth\Contracts;
+namespace Askedio\MultiAuth\Contracts;
 
 interface Factory
 {
@@ -9,7 +9,7 @@ interface Factory
      *
      * @param string $driver
      *
-     * @return \App\MultiAuth\Contracts\Provider
+     * @return \Askedio\MultiAuth\Contracts\Provider
      */
     public function driver($driver = null);
 }

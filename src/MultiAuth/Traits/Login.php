@@ -1,8 +1,8 @@
 <?php
 
-namespace App\MultiAuth\Traits;
+namespace Askedio\MultiAuth\Traits;
 
-use App\MultiAuth\Jobs\SendEmailLoginToken;
+use Askedio\MultiAuth\Jobs\SendEmailLoginToken;
 use Illuminate\Http\Request;
 
 trait Login

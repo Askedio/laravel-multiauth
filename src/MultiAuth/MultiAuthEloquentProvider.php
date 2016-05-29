@@ -1,6 +1,6 @@
 <?php
 
-namespace App\MultiAuth;
+namespace Askedio\MultiAuth;
 
 use Carbon\Carbon;
 use Illuminate\Auth\EloquentUserProvider;

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\MultiAuth;
+namespace Askedio\MultiAuth;
 
-use App\MultiAuth\Contracts\Factory;
+use Askedio\MultiAuth\Contracts\Factory;
 use Auth;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Console\Scheduling\Schedule;

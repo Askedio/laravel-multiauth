@@ -1,6 +1,6 @@
 <?php
 
-namespace App\MultiAuth\Providers;
+namespace Askedio\MultiAuth\Providers;
 
 use Illuminate\Http\Request;
 

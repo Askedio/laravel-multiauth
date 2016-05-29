@@ -1,6 +1,6 @@
 <?php
 
-namespace App\MultiAuth\Traits;
+namespace Askedio\MultiAuth\Traits;
 
 trait Message
 {

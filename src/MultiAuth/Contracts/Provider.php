@@ -1,6 +1,6 @@
 <?php
 
-namespace App\MultiAuth\Contracts;
+namespace Askedio\MultiAuth\Contracts;
 
 interface Provider
 {

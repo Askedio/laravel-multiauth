@@ -1,6 +1,6 @@
 <?php
 
-namespace App\MultiAuth\Commands;
+namespace Askedio\MultiAuth\Commands;
 
 use App\UserOauth;
 use Carbon\Carbon;

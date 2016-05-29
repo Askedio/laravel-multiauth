@@ -1,6 +1,6 @@
 <?php
 
-namespace App\MultiAuth;
+namespace Askedio\MultiAuth;
 
 use Illuminate\Support\Manager;
 use InvalidArgumentException;
@@ -21,10 +21,10 @@ class MultiAuthManager extends Manager implements Contracts\Factory
         $base = sprintf('%s/{driver}', $base);
         $back = sprintf('%s/%s', $base, $back);
 
-        Route::get($base, '\App\MultiAuth\Controllers\MultiAuthController@index');
-        Route::post($base, '\App\MultiAuth\Controllers\MultiAuthController@index');
-        Route::get($back.'/{token}', '\App\MultiAuth\Controllers\MultiAuthController@show');
-        Route::get($back, '\App\MultiAuth\Controllers\MultiAuthController@show');
+        Route::get($base, '\Askedio\MultiAuth\Controllers\MultiAuthController@index');
+        Route::post($base, '\Askedio\MultiAuth\Controllers\MultiAuthController@index');
+        Route::get($back.'/{token}', '\Askedio\MultiAuth\Controllers\MultiAuthController@show');
+        Route::get($back, '\Askedio\MultiAuth\Controllers\MultiAuthController@show');
     }
 
     /**
@@ -36,7 +36,7 @@ class MultiAuthManager extends Manager implements Contracts\Factory
     {
         $config = $this->app['config'];
 
-        return $this->buildProvider(\App\MultiAuth\Providers\LinkProvider::class, $config);
+        return $this->buildProvider(\Askedio\MultiAuth\Providers\LinkProvider::class, $config);
     }
 
     /**
@@ -48,7 +48,7 @@ class MultiAuthManager extends Manager implements Contracts\Factory
     {
         $config = $this->app['config'];
 
-        return $this->buildProvider(\App\MultiAuth\Providers\SocialiteProvider::class, $config);
+        return $this->buildProvider(\Askedio\MultiAuth\Providers\SocialiteProvider::class, $config);
     }
 
     /**
@@ -60,7 +60,7 @@ class MultiAuthManager extends Manager implements Contracts\Factory
     {
         $config = $this->app['config'];
 
-        return $this->buildProvider(\App\MultiAuth\Providers\EmailProvider::class, $config);
+        return $this->buildProvider(\Askedio\MultiAuth\Providers\EmailProvider::class, $config);
     }
 
     /**

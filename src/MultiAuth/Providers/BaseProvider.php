@@ -1,15 +1,15 @@
 <?php
 
-namespace App\MultiAuth\Providers;
+namespace Askedio\MultiAuth\Providers;
 
-use App\MultiAuth\Traits\AuthenticatesAndRegistersUsers;
-use App\MultiAuth\Contracts\Provider as ProviderContract;
-use App\MultiAuth\Traits\Errors;
-use App\MultiAuth\Traits\Helpers;
-use App\MultiAuth\Traits\Login;
-use App\MultiAuth\Traits\Message;
-use App\MultiAuth\Traits\Tokens;
-use App\MultiAuth\Traits\Response;
+use Askedio\MultiAuth\Traits\AuthenticatesAndRegistersUsers;
+use Askedio\MultiAuth\Contracts\Provider as ProviderContract;
+use Askedio\MultiAuth\Traits\Errors;
+use Askedio\MultiAuth\Traits\Helpers;
+use Askedio\MultiAuth\Traits\Login;
+use Askedio\MultiAuth\Traits\Message;
+use Askedio\MultiAuth\Traits\Tokens;
+use Askedio\MultiAuth\Traits\Response;
 use Illuminate\Http\Request;
 
 abstract class BaseProvider implements ProviderContract

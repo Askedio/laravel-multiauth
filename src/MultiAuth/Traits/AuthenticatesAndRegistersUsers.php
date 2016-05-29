@@ -1,6 +1,6 @@
 <?php
 
-namespace App\MultiAuth\Traits;
+namespace Askedio\MultiAuth\Traits;
 
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;

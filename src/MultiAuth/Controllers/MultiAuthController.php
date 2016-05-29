@@ -1,6 +1,6 @@
 <?php
 
-namespace App\MultiAuth\Controllers;
+namespace Askedio\MultiAuth\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

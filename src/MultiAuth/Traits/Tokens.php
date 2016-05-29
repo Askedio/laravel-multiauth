@@ -1,6 +1,6 @@
 <?php
 
-namespace App\MultiAuth\Traits;
+namespace Askedio\MultiAuth\Traits;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;

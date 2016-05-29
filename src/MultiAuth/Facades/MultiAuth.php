@@ -1,8 +1,8 @@
 <?php
 
-namespace App\MultiAuth\Facades;
+namespace Askedio\MultiAuth\Facades;
 
-use App\MultiAuth\Contracts\Factory;
+use Askedio\MultiAuth\Contracts\Factory;
 use Illuminate\Support\Facades\Facade;
 
 class MultiAuth extends Facade

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\MultiAuth\Jobs;
+namespace Askedio\MultiAuth\Jobs;
 
 use Illuminate\Contracts\Mail\Mailer;
 use Illuminate\Contracts\Queue\ShouldQueue;

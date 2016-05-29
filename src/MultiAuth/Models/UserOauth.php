@@ -1,6 +1,6 @@
 <?php
 
-namespace App\MultiAuth\Models;
+namespace Askedio\MultiAuth\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
