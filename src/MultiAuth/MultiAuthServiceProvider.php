@@ -44,6 +44,12 @@ class MultiAuthServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->register(\Laravel\Socialite\Facades\Socialite::class);
+
+        $loader = \Illuminate\Foundation\AliasLoader::getInstance();
+        $loader->alias('Socialite', \Laravel\Socialite\Facades\Socialite::class);
+        $loader->alias('MultiAuth', \Askedio\MultiAuth\Facades\MultiAuth::class);
+  
         $this->app->singleton(Factory::class, function ($app) {
             return new MultiAuthManager($app);
         });
@@ -58,8 +64,6 @@ class MultiAuthServiceProvider extends ServiceProvider
             __DIR__.'/../config/multiauth.php',
             'multiauth'
         );
-
-
     }
 
     /**
