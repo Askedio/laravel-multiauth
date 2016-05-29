@@ -1,0 +1,17 @@
+{
+    "name": "askedio/laravel-multiauth",
+    "description": "Authenticate using multiple sources.",
+    "keywords": ["laravel"],
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": ">=5.5.9",
+        "laravel/framework": "5.2.*",
+        "laravel/socialite": "^2.0"
+     },
+    "autoload": {
+        "psr-4": {
+            "Askedio\\MultiAuth\\": "src/"
+        }
+    }
+}
