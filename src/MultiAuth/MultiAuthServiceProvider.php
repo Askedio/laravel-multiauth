@@ -30,10 +30,10 @@ class MultiAuthServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'multiauth');
 
         $this->publishes([
-            __DIR__.'/../resources/lang' => resource_path('lang/vendor/multiauth'),
-            __DIR__.'/../resources/views' => resource_path('views/vendor/multiauth'),
-            __DIR__.'/../config/multiauth.php' => config_path('multiauth.php'),
-            __DIR__.'/../database/migrations' => database_path('migrations'),
+            __DIR__.'/../../resources/lang' => resource_path('lang/vendor/multiauth'),
+            __DIR__.'/../../resources/views' => resource_path('views/vendor/multiauth'),
+            __DIR__.'/../../config/multiauth.php' => config_path('multiauth.php'),
+            __DIR__.'/../../database/migrations' => database_path('migrations'),
         ]);
     }
 
@@ -61,7 +61,7 @@ class MultiAuthServiceProvider extends ServiceProvider
         $this->commands('command.multiauth:deleteExpiredTokens');
 
         $this->mergeConfigFrom(
-            __DIR__.'/../config/multiauth.php',
+            __DIR__.'/../../config/multiauth.php',
             'multiauth'
         );
     }
