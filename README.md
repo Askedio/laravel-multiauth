@@ -1,6 +1,9 @@
 # Laravel Multi Auth
 Authenticate your Laravel 5 application with email/password, email link, socialite and custom drivers.
 
+[Example app](https://github.com/Askedio/laravel-multi-oauth)
+
+
 ![screen shot](http://i.imgur.com/NxiEQUM.png)
 
 # Installation
