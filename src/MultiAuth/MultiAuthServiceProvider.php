@@ -24,6 +24,13 @@ class MultiAuthServiceProvider extends ServiceProvider
             $schedule = $this->app->make(Schedule::class);
             $schedule->command('command.multiauth:deleteExpiredTokens')->hourly();
         });
+
+        $this->publishes([
+            __DIR__.'/../resources/lang' => resource_path('lang/vendor/multiauth'),
+            __DIR__.'/../resources/views' => resource_path('views/vendor/multiauth'),
+            __DIR__.'/../config/multiauth.php' => config_path('multiauth.php'),
+            __DIR__.'/../database/migrations' => database_path('migrations'),
+        ]);
     }
 
     /**
