@@ -24,7 +24,7 @@ class SendEmailLoginToken implements ShouldQueue
     public function __construct($user, $oauth)
     {
         $this->user = $user;
-        
+
         $this->oauth = $oauth;
     }
 
@@ -35,8 +35,8 @@ class SendEmailLoginToken implements ShouldQueue
      */
     public function handle(Mailer $mailer)
     {
-        $mailer->send('auth.emails.link', ['user' => $this->user, 'oauth' => $this->oauth], function ($m) {
-            $m->to($this->user->email, $this->user->name)->subject(trans('multiauth.email_subject'));
+        $mailer->send(config('multiauth.email.template'), ['user' => $this->user, 'oauth' => $this->oauth], function ($m) {
+            $m->to($this->user->email, $this->user->name)->subject(trans('multiauth::multiauth.email_subject'));
         });
     }
 }

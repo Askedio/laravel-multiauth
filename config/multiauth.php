@@ -27,6 +27,7 @@ return [
         ],
         'confirm' => true,
         'expires' => '+15 minutes',
+        'template' => 'multiauth::auth.emails.link',
     ],
 
     'link' => [

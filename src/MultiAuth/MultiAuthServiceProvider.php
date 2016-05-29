@@ -25,6 +25,10 @@ class MultiAuthServiceProvider extends ServiceProvider
             $schedule->command('command.multiauth:deleteExpiredTokens')->hourly();
         });
 
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'multiauth');
+
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'multiauth');
+
         $this->publishes([
             __DIR__.'/../resources/lang' => resource_path('lang/vendor/multiauth'),
             __DIR__.'/../resources/views' => resource_path('views/vendor/multiauth'),
@@ -49,6 +53,12 @@ class MultiAuthServiceProvider extends ServiceProvider
         });
 
         $this->commands('command.multiauth:deleteExpiredTokens');
+
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/multiauth.php',
+            'multiauth'
+        );
+
 
     }
 

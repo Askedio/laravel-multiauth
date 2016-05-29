@@ -161,7 +161,7 @@ class SocialiteProvider extends BaseProvider
 
         if ($user = $this->getCurrentUser()) {
             if ($this->isExistingUser()) {
-                $this->setError($this->authenticationError(trans('multiauth.existing', ['provider' => $this->provider])));
+                $this->setError($this->authenticationError(trans('multiauth::multiauth.existing', ['provider' => $this->provider])));
 
                 return $this;
             }

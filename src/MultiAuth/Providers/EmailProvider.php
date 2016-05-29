@@ -66,7 +66,7 @@ class EmailProvider extends BaseProvider
         }
 
         if ($user->confirmed == 0) {
-            return $this->setError($this->authenticationError(trans('multiauth.confirmation')));
+            return $this->setError($this->authenticationError(trans('multiauth::multiauth.confirmation')));
         }
 
         return $this->callback();
