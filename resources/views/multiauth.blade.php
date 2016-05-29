@@ -29,20 +29,20 @@
       <div class="col-sm-4 col-sm-offset-4">
           <hr>
           <h3>Use a social network</h3>
-          @include('partials.social')
+          @include('multiauth::partials.social')
 
           <hr>
           <h3>Get a login link</h3>
-          @include('partials.link')
+          @include('multiauth::partials.link')
 
           <hr>
           <h3>Use email &amp; password</h3>
-          @include('partials.password')
+          @include('multiauth::partials.password')
 
           @if(config("services.facebook.client_id"))
               <hr>
               <h3>Use an API</h3>
-              @include('partials.facebook')
+              @include('multiauth::partials.facebook')
           @endif
       </div>
     @endif
