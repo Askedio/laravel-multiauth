@@ -1,35 +1,44 @@
 # Laravel Multi Auth
-Authenticate your Laravel 5 application with email/password, email link, socialite and custom drivers.
-
-[Example app](https://github.com/Askedio/laravel-multi-oauth)
+Authenticate your Laravel 5 application with email/password, email link, socialite and custom drivers. [Demo](https://cruddy.io/apps/multiauth/login) & [Example app](https://github.com/Askedio/laravel-multi-oauth).
 
 
 ![screen shot](http://i.imgur.com/NxiEQUM.png)
 
 # Installation
-#### Install with composer.
+## Install with composer.
 ~~~
 composer require askedio/laravel-multiauth:dev-master
 ~~~
-#### Register the Provider in `config/app.php`
+
+## Enable
+Edit `config/app.php`
+
+Register the `provider` and `alias`
 ~~~
  Askedio\MultiAuth\MultiAuthServiceProvider::class,
 ~~~
-#### Register the Alias in `config/app.php`
 ~~~
 'MultiAuth' => Askedio\MultiAuth\Facades\MultiAuth::class,
 ~~~
-#### Add to `app/Http/routes.php`
-~~~
-MultiAuth::route();
-~~~~
 
-#### Publish files & migrate
+## Publish & migrate
+Please note: The `users` table needs some [new fields](https://github.com/Askedio/laravel-multiauth/blob/master/database/migrations/2014_10_12_000000_add_users_table.php) & a [table](https://github.com/Askedio/laravel-multiauth/blob/master/database/migrations/2016_05_24_000000_create_user_oauth_table.php) for the tokens.
 ~~~
 php artisan vendor:publish
 php artisan migrate
 ~~~
-#### Add to `app\User.php`
+
+## Configure Routes
+Edit `app/Http/routes.php`
+
+Add the following line.
+~~~
+MultiAuth::route();
+~~~~
+
+## Configure User Model
+Edit `app\User.php`
+
 Change fillable to read.
 ~~~
 protected $fillable = [
@@ -44,8 +53,29 @@ public function oauth()
 }
 ~~~
 
-#### Modify `resources/views/auth/login.blade.php`
-Include the multiauth login form.
+## Configure Auth Guards & Providers
+Edit `config/auth.php`
+
+
+Add to the `guards` array
+~~~
+'multiAuth' => [
+    'driver'   => 'session',
+    'provider' => 'multiAuth',
+],
+~~~
+
+Add to the `providers` array
+~~~
+'multiAuth' => [
+    'driver' => 'multiAuth',
+    'model'  => App\User::class,
+],
+~~~
+## Configure your template
+Edit `resources/views/auth/login.blade.php`
+
+Replace content with the `multiauth::login` login form.
 ~~~
 @extends('layouts.app')
 
@@ -54,21 +84,10 @@ Include the multiauth login form.
 @endsection
 ~~~
 
-#### Add to the `guards` array in `config/auth.php`
-~~~
-'multiAuth' => [
-    'driver'   => 'session',
-    'provider' => 'multiAuth',
-],
-~~~
-#### Add to the `providers` array in `config/auth.php`
-~~~
-'multiAuth' => [
-    'driver' => 'multiAuth',
-    'model'  => App\User::class,
-],
-~~~
-#### Add the services you want in `config/services.php`
+## Configure Socialite
+Edit `config/services.php`
+
+Add all the services you want.
 ~~~
 'facebook' => [
     'client_id'     => env('FACEBOOK_CLIENT_ID'),
@@ -76,10 +95,9 @@ Include the multiauth login form.
     'redirect'      => env('APP_URL').'/auth/facebook/callback',
 ],
 ~~~
-#### Add the settings to `.env`
+Edit `.env` and add all the settings.
 ~~~
 FACEBOOK_CLIENT_ID=
 FACEBOOK_CLIENT_SECRET=
 ~~~
-
 
