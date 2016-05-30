@@ -7,7 +7,7 @@ Authenticate your Laravel 5 application with email/password, email link, sociali
 # Installation
 ## Install with composer.
 ~~~
-composer require askedio/laravel-multiauth:dev-master
+composer require askedio/laravel-multiauth
 ~~~
 
 ## Enable
