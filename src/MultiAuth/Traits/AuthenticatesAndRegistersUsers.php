@@ -2,7 +2,7 @@
 
 namespace Askedio\MultiAuth\Traits;
 
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers as LaravelAuthenticatesAndRegistersUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
@@ -10,7 +10,7 @@ use Validator;
 
 trait AuthenticatesAndRegistersUsers
 {
-    use AuthenticatesAndRegistersUsers, ThrottlesLogins, ValidatesRequests;
+    use LaravelAuthenticatesAndRegistersUsers, ThrottlesLogins, ValidatesRequests;
 
     /**
      * [validateLogin description].

@@ -29,6 +29,12 @@ php artisan vendor:publish
 php artisan migrate
 ~~~
 
+# Laravel Auth
+Make the Laravel auth system.
+~~~
+php artisan make:auth
+~~~
+
 ## Configure Routes
 Edit `app/Http/routes.php`
 

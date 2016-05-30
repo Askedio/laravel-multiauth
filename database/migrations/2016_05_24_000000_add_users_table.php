@@ -16,8 +16,6 @@ class AddUsersTable extends Migration
             $table->boolean('confirmed')->default(1);
             $table->string('avatar')->nullable();
             $table->string('nickname')->nullable();
-            $table->rememberToken();
-            $table->timestamps();
         });
     }
     /**
