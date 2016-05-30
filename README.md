@@ -1,8 +1,9 @@
+![screen shot](http://i.imgur.com/MFkJssu.jpg)
+
 # Laravel Multi Auth
-Authenticate your Laravel 5 application with email/password, email link, socialite and custom drivers. [Demo](https://cruddy.io/apps/multiauth/login) & [Example app](https://github.com/Askedio/laravel-multi-oauth).
+Authenticate your Laravel 5 applications with email/password, email link, socialite and custom drivers. [Demo](https://cruddy.io/apps/multiauth/login) & [Example app](https://github.com/Askedio/laravel-multi-oauth).
 
-
-![screen shot](http://i.imgur.com/NxiEQUM.png)
+This package extends the default auth system with a custom guard, views and routes.
 
 # Installation
 ## Install with composer.
