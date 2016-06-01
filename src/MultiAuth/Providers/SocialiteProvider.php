@@ -191,6 +191,11 @@ class SocialiteProvider extends BaseProvider
      */
     public function callfront()
     {
+        $scopes = config(sprintf('services.%s.scopes', $this->provider));
+        if (!empty($scopes)) {
+            $this->socialite->scopes($scopes);
+        }
+
         try {
             $redirect = $this->socialite->redirect()->getTargetUrl();
         } catch (\Exception $e) {
