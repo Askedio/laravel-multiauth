@@ -102,8 +102,8 @@ class SocialiteProvider extends BaseProvider
             'avatar'       => $socialiteUser->getAvatar(),
             'nickname'     => $socialiteUser->getNickname(),
             'token'        => $socialiteUser->token,
-            'token_secret' => method_exists($socialiteUser, 'tokenSecret') ? $socialiteUser->tokenSecret : null,
-            'expires_at'   => method_exists($socialiteUser, 'expiresIn') ? $socialiteUser->expiresIn : Carbon::parse(config('multiauth.socialite.expires')),
+            'token_secret' => property_exists($socialiteUser, 'tokenSecret') ? $socialiteUser->tokenSecret : null,
+            'expires_at'   => property_exists($socialiteUser, 'expiresIn') ? $socialiteUser->expiresIn : Carbon::parse(config('multiauth.socialite.expires')),
         ]);
 
         return $socialiteUser;
